@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatOn AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" aria-label="Sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="ChatOn AI Logo" class="logo">
+                <h1>ChatOn AI</h1>
+            </div>
+            <button id="newChatButton" class="new-chat-btn" aria-label="Start a new chat">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
+            <nav class="chat-history" aria-label="Chat History">
+                <h2>Chat History</h2>
+                <ul id="chatHistoryList"></ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </aside>
+        <main class="chat-area">
+            <header class="chat-header">
+                <h2 id="currentChatTitle">New Chat</h2>
+                <button id="clearButton" class="clear-chat-btn" disabled aria-label="Clear chat">
+                    <i class="fas fa-trash"></i> Clear Chat
+                </button>
+            </header>
+            <div id="chatMessages" class="chat-messages" aria-live="polite" aria-atomic="false">
+                <div class="welcome-message">
+                    <h2>Welcome to ChatOn AI Assistant! 👋</h2>
+                    <p>How can I help you today? Here are some suggestions:</p>
+                    <ul>
+                        <li tabindex="0">Explain quantum computing</li>
+                        <li tabindex="0">Write a short story about time travel</li>
+                        <li tabindex="0">Tips for improving productivity</li>
+                        <li tabindex="0">Best practices for sustainable living</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="typingIndicator" class="typing-indicator" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
+            <footer class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="Type your message here..." rows="1" aria-label="Type a message"></textarea>
+                    <button id="sendButton" class="send-button" disabled aria-label="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <button id="micButton" class="mic-button" aria-label="Activate microphone" aria-pressed="false" title="Activate microphone">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <div id="loadingSpinner" class="loading-spinner" aria-hidden="true"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
