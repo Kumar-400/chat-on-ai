@@ -12,7 +12,7 @@ let chatHistory = [];
 let savedChats = [];
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = "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";
 
 const API_HEADERS = {
     'Authorization': `Bearer ${GROQ_API_KEY}`,
