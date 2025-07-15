@@ -59,7 +59,7 @@ const sendMessage = async () => {
                 { role: 'system', content: 'You are a helpful assistant. Use markdown for formatting, including tables and code blocks. Use LaTeX for mathematical expressions, enclosed in $$ for display math or $ for inline math.' },
                 ...chatHistory
             ],
-            model: 'llama-3.1-70b-versatile',
+            model: 'meta-llama/llama-4-scout-17b-16e-instruct',
             temperature: 0.5,
             max_tokens: 1024
         }, { headers: API_HEADERS });
